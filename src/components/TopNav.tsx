@@ -14,7 +14,7 @@ export function TopNav() {
   }, []);
 
   const handleCtaClick = () => {
-    trackWhatsAppClick('top_navigation');
+    trackWhatsAppClick();
   };
 
   return (

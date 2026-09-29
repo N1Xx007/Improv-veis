@@ -12,7 +12,7 @@ export function EventPassBox() {
   };
 
   const handleCta = () => {
-    trackWhatsAppClick('event_pass_box_checkout');
+    trackWhatsAppClick();
   };
 
   return (

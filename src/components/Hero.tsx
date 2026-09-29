@@ -5,7 +5,7 @@ import { getWhatsAppLink, trackWhatsAppClick } from '../config/constants';
 
 export function Hero() {
   const handleCtaClick = () => {
-    trackWhatsAppClick('hero_sales_primary');
+    trackWhatsAppClick();
   };
 
   return (

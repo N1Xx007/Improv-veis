@@ -12,7 +12,7 @@ export function EventInfo() {
   };
 
   const handleCtaClick = () => {
-    trackWhatsAppClick('event_info_section');
+    trackWhatsAppClick();
   };
 
   return (

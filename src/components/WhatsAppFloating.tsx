@@ -16,7 +16,7 @@ export function WhatsAppFloating() {
   }, []);
 
   const handleClick = () => {
-    trackWhatsAppClick('floating_button');
+    trackWhatsAppClick();
   };
 
   if (!visible) return null;

@@ -5,7 +5,7 @@ import { BotanicalDivider } from './BotanicalDecor';
 
 export function PainAndIdentification() {
   const handleCta = () => {
-    trackWhatsAppClick('identification_sales_section');
+    trackWhatsAppClick();
   };
 
   return (

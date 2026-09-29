@@ -5,7 +5,7 @@ import { OliveBranch } from './BotanicalDecor';
 
 export function ImpactQuote() {
   const handleCtaClick = () => {
-    trackWhatsAppClick('impact_quote_section');
+    trackWhatsAppClick();
   };
 
   return (

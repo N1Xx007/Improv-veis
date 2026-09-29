@@ -4,7 +4,7 @@ import { getWhatsAppLink, trackWhatsAppClick } from '../config/constants';
 
 export function TopAnnouncementBar() {
   const handleClick = () => {
-    trackWhatsAppClick('top_announcement_bar');
+    trackWhatsAppClick();
   };
 
   return (

@@ -22,43 +22,8 @@ export function getWhatsAppLink(customMessage?: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-/**
- * Dispara eventos de rastreamento para Meta Pixel (Lead) e Google Analytics.
- * Não quebra a página se o pixel ou tag manager ainda não estiverem instalados.
- */
-export function trackWhatsAppClick(buttonLocation: string = "unspecified"): void {
-  try {
-    // Dispara evento no Meta Pixel caso esteja instalado
-    if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
-      (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("track", "Lead", {
-        content_name: "Congresso Improváveis",
-        content_category: "Inscrição WhatsApp",
-        button_location: buttonLocation,
-      });
-    }
-
-    // Dispara evento no Google Analytics (gtag) caso esteja instalado
-    if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "generate_lead", {
-        event_category: "Engagement",
-        event_label: buttonLocation,
-        value: 1,
-      });
-    }
-
-    // Dispara evento CustomEvent para scripts externos ou GTM listeners
-    if (typeof window !== "undefined") {
-      window.dispatchEvent(
-        new CustomEvent("improvisseis_whatsapp_click", {
-          detail: { location: buttonLocation, timestamp: Date.now() },
-        })
-      );
-    }
-  } catch (err) {
-    // Fail silently para não prejudicar a navegação da usuária
-    console.debug("Tracking notification:", err);
-  }
-}
+// Mantém um único helper compartilhado por todos os CTAs de WhatsApp.
+export { trackWhatsAppClick } from '../lib/metaPixel';
 
 /**
  * Informações oficiais do evento (imutáveis, conforme instrução da liderança)

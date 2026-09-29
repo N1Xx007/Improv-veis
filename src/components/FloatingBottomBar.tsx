@@ -15,7 +15,7 @@ export function FloatingBottomBar() {
   }, []);
 
   const handleClick = () => {
-    trackWhatsAppClick('floating_bottom_bar');
+    trackWhatsAppClick();
   };
 
   if (!visible) return null;

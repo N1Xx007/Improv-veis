@@ -68,31 +68,15 @@
       }
     </script>
 
-    <!--
-      TRACKING SCRIPTS INJECTION POINTS:
-      Para inserir o Meta Pixel ou Google Tag Manager:
-      1. Substitua os comentários abaixo pelo snippet oficial do Meta Pixel / GTM.
-      2. Os botões de WhatsApp desta landing page já chamam trackWhatsAppClick(), que dispara fbq('track', 'Lead') automaticamente quando o pixel estiver presente.
-    -->
-    <!-- Meta Pixel Code Placeholder -->
-    <!--
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      // fbq('init', 'SEU_PIXEL_ID_AQUI');
-      // fbq('track', 'PageView');
+    <!-- Meta Pixel Code: ID configurado em VITE_META_PIXEL_ID. -->
+    <script type="module">
+      import { initializeMetaPixel } from '/src/lib/metaPixel.ts';
+      initializeMetaPixel();
     </script>
-    -->
+    <!-- End Meta Pixel Code -->
   </head>
   <body class="bg-[#FAF8F5] text-[#2C2926] antialiased selection:bg-[#52634B]/20 selection:text-[#1F2B1C]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

@@ -38,7 +38,7 @@ export function FAQ() {
   };
 
   const handleCta = () => {
-    trackWhatsAppClick('faq_direct_support');
+    trackWhatsAppClick();
   };
 
   return (
@@ -120,4 +120,3 @@ export function FAQ() {
     </section>
   );
 }
-

@@ -1,11 +1,29 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import {defineConfig, loadEnv} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({mode}) => {
+  const pixelId = loadEnv(mode, process.cwd(), 'VITE_META_PIXEL_ID').VITE_META_PIXEL_ID?.trim();
+
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'meta-pixel-noscript',
+        transformIndexHtml() {
+          if (!pixelId || !/^[1-9]\d*$/.test(pixelId)) return [];
+
+          return [{
+            tag: 'noscript',
+            // Uma imagem em <noscript> pertence ao body, não ao head.
+            injectTo: 'body' as const,
+            children: `<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=${pixelId}&amp;ev=PageView&amp;noscript=1">`,
+          }];
+        },
+      },
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

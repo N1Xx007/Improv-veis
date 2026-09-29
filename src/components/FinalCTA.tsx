@@ -6,7 +6,7 @@ import { OliveBranch } from './BotanicalDecor';
 
 export function FinalCTA() {
   const handleCtaClick = () => {
-    trackWhatsAppClick('final_sales_cta_section');
+    trackWhatsAppClick();
   };
 
   return (

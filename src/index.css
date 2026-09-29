@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: "Alex Brush", cursive;
+
+  --color-brand-cream: #FAF8F5;
+  --color-brand-sand: #F3EEE6;
+  --color-brand-beige: #E8E0D2;
+  --color-brand-olive: #46553D;
+  --color-brand-olive-deep: #2A3624;
+  --color-brand-olive-darker: #1E2719;
+  --color-brand-olive-soft: #637358;
+  --color-brand-olive-light: #EDF1EA;
+  --color-brand-earth: #785A42;
+  --color-brand-terracotta: #A66547;
+  --color-brand-gold: #BFA054;
+  --color-brand-dark: #23201C;
+  --color-brand-muted: #6E685F;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: #46553D;
+  color: #FAF8F5;
+}
+
+/* Subtle organic paper texture overlay helper */
+.paper-grain {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(#d3c9b8 0.75px, transparent 0.75px), radial-gradient(#d3c9b8 0.75px, #FAF8F5 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Soft botanical decorative border style */
+.editorial-border {
+  border-color: rgba(70, 85, 61, 0.14);
+}

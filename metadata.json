@@ -1,0 +1,6 @@
+{
+  "name": "Congresso de Mulheres IMPROVÁVEIS",
+  "description": "Landing page oficial do Congresso de Mulheres IMPROVÁVEIS na Igreja Batista Vida com Missionária Raquel Lopes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

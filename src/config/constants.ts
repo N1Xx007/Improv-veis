@@ -9,7 +9,7 @@
  * Exemplo: "5562999999999"
  */
 
-export const WHATSAPP_NUMBER = "55XXXXXXXXXXX";
+export const WHATSAPP_NUMBER = "556299203014";
 
 export const WHATSAPP_DEFAULT_MESSAGE =
   "Olá! Vi o Congresso de Mulheres IMPROVÁVEIS e gostaria de saber como participar.";
